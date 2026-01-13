@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import { allDashboardContext } from '../../context/Dashboard/DashboardContext';
 import { CreateAlbum } from '../Album/CreateAlbum';
 import { allImageInsideAlbumApi } from '../../api/album/allImageInsideAlbumApi';
+import { ChatDrawer } from './ChatDrawer';
 
 
 export const Dashboard = () => {
@@ -19,6 +20,9 @@ export const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { userName, fetchDetailsFromLocalStorage } = allAuthContext();
+
+    const [isChatOpen, setIsChatOpen] = useState(false);
+
 
     const { fetchAllAlbum, album } = allDashboardContext();
 
@@ -236,6 +240,20 @@ export const Dashboard = () => {
 
 
                 {isOpen && <CreateAlbum onClose={() => setIsOpen(false)} />}
+
+
+                {/* AI Chat Button */}
+                <button
+                    onClick={() => setIsChatOpen(true)}
+                    className="fixed bottom-6 right-6 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 z-40"
+                >
+                    💬 AI Chat
+                </button>
+
+                {isChatOpen && (
+                    <ChatDrawer onClose={() => setIsChatOpen(false)} />
+                )}
+
 
             </main>
             <ToastContainer />

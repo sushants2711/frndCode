@@ -8,6 +8,7 @@ import userRouter from "./routers/user.route.js";
 import albumRouter from "./routers/album.route.js";
 import imageRouter from "./routers/image.route.js";
 import dashboardRouter from "./routers/dashboard.route.js";
+import gemniRouter from "./routers/gemni.route.js";
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use("/api/v1/google", userRouter);
 app.use("/api/v1/album", albumRouter);
 app.use("/api/v1/image", imageRouter);
 app.use("/api/v1/dashboard", dashboardRouter);
+app.use("/api/v1/chat", gemniRouter);
 
 
 // server started 
