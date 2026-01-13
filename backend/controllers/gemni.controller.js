@@ -1,4 +1,4 @@
-import { generateChatForUser } from "../config/google.gemni.ai";
+import { generateChatForUser } from "../config/google.gemni.ai.js";
 import gemniModel from "../models/gemni.model.js";
 
 
